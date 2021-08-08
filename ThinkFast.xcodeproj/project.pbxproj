@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52E167A8AF4E39EF2CEA446 /* libPods-ThinkFast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DD721DC31ED275D6E7A43A /* libPods-ThinkFast.a */; };
 		F7040C9D26703E8500032247 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040C9C26703E8500032247 /* AppDelegate.swift */; };
 		F7040C9F26703E8500032247 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040C9E26703E8500032247 /* SceneDelegate.swift */; };
 		F7040CA126703E8500032247 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040CA026703E8500032247 /* ViewController.swift */; };
 		F7040CA426703E8500032247 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA226703E8500032247 /* Main.storyboard */; };
 		F7040CA626703E8700032247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA526703E8700032247 /* Assets.xcassets */; };
 		F7040CA926703E8700032247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA726703E8700032247 /* LaunchScreen.storyboard */; };
+		F7040CB12670449E00032247 /* GameScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040CB02670449E00032247 /* GameScreenController.swift */; };
+		F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = F76F0FF526A10CF500EF2A9F /* confetti.json */; };
+		F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8D2682BBC600E296FD /* loseViewController.swift */; };
+		F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8F2685591F00E296FD /* goodJobScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90DD721DC31ED275D6E7A43A /* libPods-ThinkFast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThinkFast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9949DCCDD53FEFBA3C9BF29E /* Pods-ThinkFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkFast.release.xcconfig"; path = "Target Support Files/Pods-ThinkFast/Pods-ThinkFast.release.xcconfig"; sourceTree = "<group>"; };
+		DA442EC4BB52C73FF7886B6F /* Pods-ThinkFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkFast.debug.xcconfig"; path = "Target Support Files/Pods-ThinkFast/Pods-ThinkFast.debug.xcconfig"; sourceTree = "<group>"; };
 		F7040C9926703E8500032247 /* ThinkFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7040C9C26703E8500032247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7040C9E26703E8500032247 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		F7040CA526703E8700032247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7040CA826703E8700032247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7040CAA26703E8700032247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7040CB02670449E00032247 /* GameScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenController.swift; sourceTree = "<group>"; };
+		F76F0FF526A10CF500EF2A9F /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		F7879D8D2682BBC600E296FD /* loseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loseViewController.swift; sourceTree = "<group>"; };
+		F7879D8F2685591F00E296FD /* goodJobScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodJobScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52E167A8AF4E39EF2CEA446 /* libPods-ThinkFast.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2505296C623FF83EF54FD898 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90DD721DC31ED275D6E7A43A /* libPods-ThinkFast.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7040C9026703E8500032247 = {
 			isa = PBXGroup;
 			children = (
 				F7040C9B26703E8500032247 /* ThinkFast */,
 				F7040C9A26703E8500032247 /* Products */,
+				F81234B889C49A10E4F7DA92 /* Pods */,
+				2505296C623FF83EF54FD898 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +79,28 @@
 		F7040C9B26703E8500032247 /* ThinkFast */ = {
 			isa = PBXGroup;
 			children = (
+				F76F0FF526A10CF500EF2A9F /* confetti.json */,
+				F7879D8D2682BBC600E296FD /* loseViewController.swift */,
 				F7040C9C26703E8500032247 /* AppDelegate.swift */,
 				F7040C9E26703E8500032247 /* SceneDelegate.swift */,
 				F7040CA026703E8500032247 /* ViewController.swift */,
 				F7040CA226703E8500032247 /* Main.storyboard */,
+				F7879D8F2685591F00E296FD /* goodJobScreen.swift */,
+				F7040CB02670449E00032247 /* GameScreenController.swift */,
 				F7040CA526703E8700032247 /* Assets.xcassets */,
 				F7040CA726703E8700032247 /* LaunchScreen.storyboard */,
 				F7040CAA26703E8700032247 /* Info.plist */,
 			);
 			path = ThinkFast;
+			sourceTree = "<group>";
+		};
+		F81234B889C49A10E4F7DA92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA442EC4BB52C73FF7886B6F /* Pods-ThinkFast.debug.xcconfig */,
+				9949DCCDD53FEFBA3C9BF29E /* Pods-ThinkFast.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +110,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7040CAD26703E8700032247 /* Build configuration list for PBXNativeTarget "ThinkFast" */;
 			buildPhases = (
+				E87676461F68C5D7583E2F0A /* [CP] Check Pods Manifest.lock */,
 				F7040C9526703E8500032247 /* Sources */,
 				F7040C9626703E8500032247 /* Frameworks */,
 				F7040C9726703E8500032247 /* Resources */,
@@ -124,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */,
 				F7040CA926703E8700032247 /* LaunchScreen.storyboard in Resources */,
 				F7040CA626703E8700032247 /* Assets.xcassets in Resources */,
 				F7040CA426703E8500032247 /* Main.storyboard in Resources */,
@@ -132,14 +170,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E87676461F68C5D7583E2F0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ThinkFast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7040C9526703E8500032247 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */,
 				F7040CA126703E8500032247 /* ViewController.swift in Sources */,
+				F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */,
 				F7040C9D26703E8500032247 /* AppDelegate.swift in Sources */,
 				F7040C9F26703E8500032247 /* SceneDelegate.swift in Sources */,
+				F7040CB12670449E00032247 /* GameScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,10 +349,12 @@
 		};
 		F7040CAE26703E8700032247 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA442EC4BB52C73FF7886B6F /* Pods-ThinkFast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = ThinkFast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,10 +369,12 @@
 		};
 		F7040CAF26703E8700032247 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9949DCCDD53FEFBA3C9BF29E /* Pods-ThinkFast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = ThinkFast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

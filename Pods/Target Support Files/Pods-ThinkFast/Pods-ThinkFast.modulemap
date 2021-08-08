@@ -1,0 +1,6 @@
+module Pods_ThinkFast {
+  umbrella header "Pods-ThinkFast-umbrella.h"
+
+  export *
+  module * { export * }
+}

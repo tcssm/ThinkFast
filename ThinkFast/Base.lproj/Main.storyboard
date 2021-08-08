@@ -1,24 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GMb-sx-CWg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThinkFast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThinkFast!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-cG-sm7">
+                                <rect key="frame" x="65.5" y="113" width="283" height="76"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="65"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OS1-Ne-8YJ">
+                                <rect key="frame" x="99.5" y="668" width="215" height="84"/>
+                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="B5p-J8-KbM"/>
+                                    <constraint firstAttribute="height" constant="84" id="b0e-ii-cxO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="wcJ-CP-vPn" kind="show" id="vEK-vM-yBc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OS1-Ne-8YJ" secondAttribute="bottom" constant="110" id="VTl-RD-03g"/>
+                            <constraint firstItem="OS1-Ne-8YJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cta-vo-Xb4"/>
+                            <constraint firstItem="aTh-cG-sm7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="kT4-sT-e3X"/>
+                            <constraint firstItem="aTh-cG-sm7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xEE-RY-pkp"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jXX-49-SWB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="73.660714285714278"/>
+        </scene>
+        <!--Game Screen Controller-->
+        <scene sceneID="JzM-35-thn">
+            <objects>
+                <viewController id="wcJ-CP-vPn" customClass="GameScreenController" customModule="ThinkFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i6W-2p-GIx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructional Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZQ-Aq-DPg">
+                                <rect key="frame" x="39" y="122" width="336" height="47"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qr-hz-Zcb">
+                                <rect key="frame" x="183" y="663" width="48" height="93"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvg-m8-qAe">
+                                <rect key="frame" x="325" y="98" width="77" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxw-gc-EdL" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="-123" y="250" width="661" height="646"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="confetti"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-0.1s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-TE-qc1">
+                                <rect key="frame" x="332" y="88" width="62" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kja-db-aMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Bvg-m8-qAe" firstAttribute="top" secondItem="kja-db-aMb" secondAttribute="top" constant="10" id="38Z-F2-gpW"/>
+                            <constraint firstItem="kja-db-aMb" firstAttribute="trailing" secondItem="Bvg-m8-qAe" secondAttribute="trailing" constant="12" id="89Z-Yz-bZW"/>
+                            <constraint firstItem="kja-db-aMb" firstAttribute="bottom" secondItem="2qr-hz-Zcb" secondAttribute="bottom" constant="106" id="8Cc-Ld-ENO"/>
+                            <constraint firstItem="AZQ-Aq-DPg" firstAttribute="top" secondItem="kja-db-aMb" secondAttribute="top" constant="34" id="BDE-Mw-cnv"/>
+                            <constraint firstItem="AZQ-Aq-DPg" firstAttribute="centerX" secondItem="i6W-2p-GIx" secondAttribute="centerX" id="OaF-gH-ZpD"/>
+                            <constraint firstItem="2qr-hz-Zcb" firstAttribute="centerX" secondItem="i6W-2p-GIx" secondAttribute="centerX" id="PHQ-bS-ePa"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tOX-jK-bhY" appends="YES" id="5bJ-z8-01j"/>
+                            <outletCollection property="gestureRecognizers" destination="pfu-LL-4NH" appends="YES" id="yMz-y8-clA"/>
+                            <outletCollection property="gestureRecognizers" destination="Qzl-hL-2WU" appends="YES" id="CNA-38-Urq"/>
+                            <outletCollection property="gestureRecognizers" destination="4yX-BP-OH6" appends="YES" id="a2c-p0-g6c"/>
+                            <outletCollection property="gestureRecognizers" destination="jPx-VN-60j" appends="YES" id="rsS-xm-Swd"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="GameTimer" destination="2qr-hz-Zcb" id="n1f-Ic-5TO"/>
+                        <outlet property="InstructionalText" destination="AZQ-Aq-DPg" id="2ya-mL-dH5"/>
+                        <outlet property="SubTime" destination="Bvg-m8-qAe" id="T0b-fb-NsZ"/>
+                        <outlet property="confetti" destination="Zxw-gc-EdL" id="s0R-xo-fyS"/>
+                        <outlet property="subAnim" destination="n2y-TE-qc1" id="tWa-hZ-4kD"/>
+                        <segue destination="QJO-Ve-5GB" kind="show" identifier="youwin" id="XQo-hd-jnU"/>
+                        <segue destination="V5O-i5-syJ" kind="show" identifier="youlose" id="X80-k5-uDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b68-bh-Iwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tOX-jK-bhY" userLabel="one">
+                    <connections>
+                        <action selector="tapGesture:" destination="wcJ-CP-vPn" id="4ok-eO-fn4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="pfu-LL-4NH" userLabel="right">
+                    <connections>
+                        <action selector="swipeGesture:" destination="wcJ-CP-vPn" id="93R-MA-NZa"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Qzl-hL-2WU" userLabel="left">
+                    <connections>
+                        <action selector="swipeGesture:" destination="wcJ-CP-vPn" id="sJD-Ae-X5I"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="jPx-VN-60j" userLabel="down">
+                    <connections>
+                        <action selector="swipeGesture:" destination="wcJ-CP-vPn" id="Yve-aT-zpc"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="4yX-BP-OH6" userLabel="up">
+                    <connections>
+                        <action selector="swipeGesture:" destination="wcJ-CP-vPn" id="tqD-kh-2Zu"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1571.0144927536232" y="73.660714285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gNY-sG-5h9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GMb-sx-CWg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NRP-Zi-Zw3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c0q-eF-N3A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gl-HC-uzB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="73.660714285714278"/>
+        </scene>
+        <!--Good Job Screen-->
+        <scene sceneID="bIB-hp-gSk">
+            <objects>
+                <viewController id="QJO-Ve-5GB" customClass="goodJobScreen" customModule="ThinkFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hux-wV-XyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Job!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8m-F0-F8Z">
+                                <rect key="frame" x="81.5" y="127" width="251" height="58"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RKl-Jn-led"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n8m-F0-F8Z" firstAttribute="centerX" secondItem="Hux-wV-XyQ" secondAttribute="centerX" id="Px7-eP-me6"/>
+                            <constraint firstItem="n8m-F0-F8Z" firstAttribute="top" secondItem="RKl-Jn-led" secondAttribute="top" constant="39" id="nyo-9i-e7Y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qhn-Q6-TLy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqm-ri-3Wu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197" y="74"/>
+        </scene>
+        <!--Lose View Controller-->
+        <scene sceneID="Ypm-fy-Mra">
+            <objects>
+                <viewController id="V5O-i5-syJ" customClass="loseViewController" customModule="ThinkFast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ksk-9T-1oa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-6g-LFv">
+                                <rect key="frame" x="61.5" y="132" width="291" height="58"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8o-fZ-MHt">
+                                <rect key="frame" x="99.5" y="687" width="215" height="84"/>
+                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="L6i-Vk-U4M"/>
+                                    <constraint firstAttribute="height" constant="84" id="N7f-rC-2rf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="35"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retryButton:" destination="V5O-i5-syJ" eventType="touchUpInside" id="r4X-Bk-pLW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Ij-wZ-E41"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Ij-wZ-E41" firstAttribute="bottom" secondItem="X8o-fZ-MHt" secondAttribute="bottom" constant="91" id="YvX-ll-eb3"/>
+                            <constraint firstItem="X8o-fZ-MHt" firstAttribute="centerX" secondItem="ksk-9T-1oa" secondAttribute="centerX" id="gri-5P-bp5"/>
+                            <constraint firstItem="Jkx-6g-LFv" firstAttribute="top" secondItem="0Ij-wZ-E41" secondAttribute="top" constant="44" id="k4r-Ep-38V"/>
+                            <constraint firstItem="Jkx-6g-LFv" firstAttribute="centerX" secondItem="ksk-9T-1oa" secondAttribute="centerX" id="nyv-E7-n4H"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pcR-0D-EOU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywh-HB-YZw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="74"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
