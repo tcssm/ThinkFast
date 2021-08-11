@@ -85,13 +85,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxw-gc-EdL" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="-123" y="250" width="661" height="646"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="confetti"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="-0.1s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-TE-qc1">
                                 <rect key="frame" x="332" y="88" width="62" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,17 +92,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxw-gc-EdL" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="125" width="414" height="646"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="confetti-firework"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kja-db-aMb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Zxw-gc-EdL" firstAttribute="trailing" secondItem="kja-db-aMb" secondAttribute="trailing" id="2iB-WD-E1E"/>
                             <constraint firstItem="Bvg-m8-qAe" firstAttribute="top" secondItem="kja-db-aMb" secondAttribute="top" constant="10" id="38Z-F2-gpW"/>
                             <constraint firstItem="kja-db-aMb" firstAttribute="trailing" secondItem="Bvg-m8-qAe" secondAttribute="trailing" constant="12" id="89Z-Yz-bZW"/>
                             <constraint firstItem="kja-db-aMb" firstAttribute="bottom" secondItem="2qr-hz-Zcb" secondAttribute="bottom" constant="106" id="8Cc-Ld-ENO"/>
                             <constraint firstItem="AZQ-Aq-DPg" firstAttribute="top" secondItem="kja-db-aMb" secondAttribute="top" constant="34" id="BDE-Mw-cnv"/>
+                            <constraint firstItem="Zxw-gc-EdL" firstAttribute="centerX" secondItem="i6W-2p-GIx" secondAttribute="centerX" id="KmH-fT-4bq"/>
                             <constraint firstItem="AZQ-Aq-DPg" firstAttribute="centerX" secondItem="i6W-2p-GIx" secondAttribute="centerX" id="OaF-gH-ZpD"/>
                             <constraint firstItem="2qr-hz-Zcb" firstAttribute="centerX" secondItem="i6W-2p-GIx" secondAttribute="centerX" id="PHQ-bS-ePa"/>
+                            <constraint firstItem="kja-db-aMb" firstAttribute="bottom" secondItem="Zxw-gc-EdL" secondAttribute="bottom" constant="91" id="Ws0-4B-gar"/>
+                            <constraint firstItem="Zxw-gc-EdL" firstAttribute="centerY" secondItem="i6W-2p-GIx" secondAttribute="centerY" id="YIc-oj-aaz"/>
+                            <constraint firstItem="Zxw-gc-EdL" firstAttribute="leading" secondItem="kja-db-aMb" secondAttribute="leading" id="hc1-cN-v3F"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="tOX-jK-bhY" appends="YES" id="5bJ-z8-01j"/>

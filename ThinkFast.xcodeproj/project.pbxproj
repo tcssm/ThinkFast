@@ -15,6 +15,7 @@
 		F7040CA626703E8700032247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA526703E8700032247 /* Assets.xcassets */; };
 		F7040CA926703E8700032247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA726703E8700032247 /* LaunchScreen.storyboard */; };
 		F7040CB12670449E00032247 /* GameScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040CB02670449E00032247 /* GameScreenController.swift */; };
+		F730A20526C353F300271D23 /* confetti-firework.json in Resources */ = {isa = PBXBuildFile; fileRef = F730A20426C353F300271D23 /* confetti-firework.json */; };
 		F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = F76F0FF526A10CF500EF2A9F /* confetti.json */; };
 		F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8D2682BBC600E296FD /* loseViewController.swift */; };
 		F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8F2685591F00E296FD /* goodJobScreen.swift */; };
@@ -33,6 +34,7 @@
 		F7040CA826703E8700032247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7040CAA26703E8700032247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7040CB02670449E00032247 /* GameScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenController.swift; sourceTree = "<group>"; };
+		F730A20426C353F300271D23 /* confetti-firework.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confetti-firework.json"; sourceTree = "<group>"; };
 		F76F0FF526A10CF500EF2A9F /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		F7879D8D2682BBC600E296FD /* loseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loseViewController.swift; sourceTree = "<group>"; };
 		F7879D8F2685591F00E296FD /* goodJobScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodJobScreen.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				F76F0FF526A10CF500EF2A9F /* confetti.json */,
+				F730A20426C353F300271D23 /* confetti-firework.json */,
 				F7879D8D2682BBC600E296FD /* loseViewController.swift */,
 				F7040C9C26703E8500032247 /* AppDelegate.swift */,
 				F7040C9E26703E8500032247 /* SceneDelegate.swift */,
@@ -164,6 +167,7 @@
 				F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */,
 				F7040CA926703E8700032247 /* LaunchScreen.storyboard in Resources */,
 				F7040CA626703E8700032247 /* Assets.xcassets in Resources */,
+				F730A20526C353F300271D23 /* confetti-firework.json in Resources */,
 				F7040CA426703E8500032247 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

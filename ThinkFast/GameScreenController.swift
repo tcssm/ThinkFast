@@ -118,6 +118,21 @@ class GameScreenController: UIViewController {
         RunLoop.current.add(startDelay, forMode: .common)
     }
     
+    func success(){
+        isComplete = true
+        timer.invalidate()
+        let angle = CGFloat.pi * CGFloat(Int.random(in: 0...360))
+        print(angle)
+        confetti.transform = CGAffineTransform(rotationAngle: angle)
+        confetti.isHidden = false
+        confetti.play(completion: {_ in self.confetti.isHidden = true
+            self.startGame()
+        })
+        subAnimation()
+        colorTimer.invalidate()
+        GameScreenController.TimeIncrement += 0.1
+    }
+    
     func subAnimation(){
         self.subAnim.isHidden = false
         self.subAnim.center.x = startX
@@ -142,7 +157,7 @@ class GameScreenController: UIViewController {
                 self.subAnim.center.x += 10.0
                 self.subAnim.center.y -= 14.0
                 self.subAnim.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 25 / 180)
-                self.subAnim.alpha = 0.4
+                self.subAnim.alpha = 0.2
               }
             )
             UIView.addKeyframe(withRelativeStartTime: 0.15, relativeDuration: 0.15,
@@ -157,100 +172,35 @@ class GameScreenController: UIViewController {
     }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with even: UIEvent?) {
         if Instruction == "Shake your phone!" {
-            isComplete = true
-            timer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            colorTimer.invalidate()
-            GameScreenController.TimeIncrement += 0.1
+            success()
         }
     }
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         tapCount += 1;
         if Instruction == "Tap once!" && tapCount == 1 {
-            isComplete = true
-            timer.invalidate()
-            colorTimer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            GameScreenController.TimeIncrement += 0.1
+            success()
         }
         else if Instruction == "Tap twice!" && tapCount == 2 {
-            isComplete = true
-            timer.invalidate()
-            colorTimer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            GameScreenController.TimeIncrement += 0.1
+           success()
         }
         else if Instruction == "Tap 3 times!" && tapCount == 3 {
-            isComplete = true
-            timer.invalidate()
-            
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            colorTimer.invalidate()
-            GameScreenController.TimeIncrement += 0.1
+            success()
         }
     }
     
     @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
         
         if sender.direction == .left && Instruction == "Swipe left!" {
-            isComplete = true
-            GameScreenController.TimeIncrement += 0.1
-            timer.invalidate()
-            confetti.isHidden = false
-            confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            colorTimer.invalidate()
+            success()
         }
         else if sender.direction == .right && Instruction == "Swipe right!" {
-            isComplete = true
-            GameScreenController.TimeIncrement += 0.1
-            timer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            colorTimer.invalidate()
+            success()
         }
         else if sender.direction == .up && Instruction == "Swipe up!" {
-            isComplete = true
-            GameScreenController.TimeIncrement += 0.1
-            timer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
-            colorTimer.invalidate()
+            success()
         }
         else if sender.direction == .down && Instruction == "Swipe down!" {
-            isComplete = true
-            GameScreenController.TimeIncrement += 0.1
-            timer.invalidate()
-            colorTimer.invalidate()
-            confetti.isHidden = false
-                        confetti.play(completion: {_ in self.confetti.isHidden = true
-                self.startGame()
-            })
-            subAnimation()
+            success()
         }
     }
     
