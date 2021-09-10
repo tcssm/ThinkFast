@@ -19,6 +19,9 @@
 		F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = F76F0FF526A10CF500EF2A9F /* confetti.json */; };
 		F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8D2682BBC600E296FD /* loseViewController.swift */; };
 		F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8F2685591F00E296FD /* goodJobScreen.swift */; };
+		F79317E926DF028200B704D6 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79317E826DF028200B704D6 /* QuestionViewController.swift */; };
+		F79317EB26DF043F00B704D6 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79317EA26DF043F00B704D6 /* MemoryViewController.swift */; };
+		F79317ED26DF061F00B704D6 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79317EC26DF061F00B704D6 /* CircleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		F76F0FF526A10CF500EF2A9F /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		F7879D8D2682BBC600E296FD /* loseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loseViewController.swift; sourceTree = "<group>"; };
 		F7879D8F2685591F00E296FD /* goodJobScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodJobScreen.swift; sourceTree = "<group>"; };
+		F79317E826DF028200B704D6 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		F79317EA26DF043F00B704D6 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
+		F79317EC26DF061F00B704D6 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +96,12 @@
 				F7040CA226703E8500032247 /* Main.storyboard */,
 				F7879D8F2685591F00E296FD /* goodJobScreen.swift */,
 				F7040CB02670449E00032247 /* GameScreenController.swift */,
+				F79317E826DF028200B704D6 /* QuestionViewController.swift */,
 				F7040CA526703E8700032247 /* Assets.xcassets */,
 				F7040CA726703E8700032247 /* LaunchScreen.storyboard */,
 				F7040CAA26703E8700032247 /* Info.plist */,
+				F79317EA26DF043F00B704D6 /* MemoryViewController.swift */,
+				F79317EC26DF061F00B704D6 /* CircleView.swift */,
 			);
 			path = ThinkFast;
 			sourceTree = "<group>";
@@ -204,10 +213,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79317ED26DF061F00B704D6 /* CircleView.swift in Sources */,
 				F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */,
 				F7040CA126703E8500032247 /* ViewController.swift in Sources */,
+				F79317E926DF028200B704D6 /* QuestionViewController.swift in Sources */,
 				F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */,
 				F7040C9D26703E8500032247 /* AppDelegate.swift in Sources */,
+				F79317EB26DF043F00B704D6 /* MemoryViewController.swift in Sources */,
 				F7040C9F26703E8500032247 /* SceneDelegate.swift in Sources */,
 				F7040CB12670449E00032247 /* GameScreenController.swift in Sources */,
 			);
@@ -360,6 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = ThinkFast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6NQHWJ977;
 				INFOPLIST_FILE = ThinkFast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

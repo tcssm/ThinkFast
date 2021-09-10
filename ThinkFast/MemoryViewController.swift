@@ -1,13 +1,13 @@
 //
-//  loseViewController.swift
+//  MemoryViewController.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 6/22/21.
+//  Created by Deanna Yee on 8/31/21.
 //
 
 import UIKit
 
-class loseViewController: UIViewController {
+class MemoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,11 +16,6 @@ class loseViewController: UIViewController {
     }
     
 
-    @IBAction func retryButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        GameScreenController.TimeIncrement = 0.0
-        self.view.layoutIfNeeded()
-    }
     /*
     // MARK: - Navigation
 

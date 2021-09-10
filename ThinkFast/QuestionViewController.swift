@@ -1,14 +1,15 @@
 //
-//  GameScreenController.swift
+//  QuestionViewController.swift
 //  ThinkFast
 //
-//  Created by Owen Gregson on 6/8/21.
+//  Created by Deanna Yee on 8/31/21.
 //
 
 import UIKit
 import Lottie
-import UIKit.UIGestureRecognizerSubclass
-class GameScreenController: UIViewController {
+
+class QuestionViewController: UIViewController {
+
     let formatter = NumberFormatter()
     static var TimeIncrement:Float = 0.0
     @IBOutlet weak var InstructionalText: UILabel!
@@ -211,39 +212,5 @@ class GameScreenController: UIViewController {
             )
         }, completion: nil)
     }
-    override func motionBegan(_ motion: UIEvent.EventSubtype, with even: UIEvent?) {
-        if Instruction == "Shake your phone!" {
-            success()
-        }
-    }
-    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
-        tapCount += 1;
-        if Instruction == "Tap once!" && tapCount == 1 {
-            success()
-        }
-        else if Instruction == "Tap twice!" && tapCount == 2 {
-           success()
-        }
-        else if Instruction == "Tap 3 times!" && tapCount == 3 {
-            success()
-        }
-    }
-    
-    @IBAction func swipeGesture(_ sender: UISwipeGestureRecognizer) {
-        
-        if sender.direction == .left && Instruction == "Swipe left!" {
-            success()
-        }
-        else if sender.direction == .right && Instruction == "Swipe right!" {
-            success()
-        }
-        else if sender.direction == .up && Instruction == "Swipe up!" {
-            success()
-        }
-        else if sender.direction == .down && Instruction == "Swipe down!" {
-            success()
-        }
-    }
-    
 
 }
