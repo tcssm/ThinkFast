@@ -15,16 +15,12 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var InstructionalText: UILabel!
     @IBOutlet weak var GameTimer: UILabel!
     @IBOutlet weak var subAnim: UILabel!
-    @IBOutlet weak var progressBar: UIView!
-    @IBOutlet weak var progressBarWidth: NSLayoutConstraint!
-    @IBOutlet weak var borderProgressBar: UIView!
     @IBOutlet weak var confetti: AnimationView!
     var Instruction: String!
-    let InstructionsList: [String]=["Swipe down!", "Swipe up!", "Swipe left!", "Swipe right!", "Tap 3 times!", "Tap once!", "Tap twice!", "Shake your phone!"]
+    let InstructionsList: [String]=["How many blue objects?", "How many red objects?", "How many green objects?", "How many circles?", "How many squares?", "How many triangles?"]
     @IBOutlet weak var SubTime: UILabel!
     var tapCount = 0
     var isComplete = false
-    var progress = 0
     var lastPoint = CGPoint.zero
     var timeSolved:Float = 0
     var colorTimer: Timer!
@@ -49,16 +45,12 @@ class QuestionViewController: UIViewController {
         super.viewWillAppear(true)
         //progressPulseTimer = Timer.scheduledTimer(timeInterval: <#T##TimeInterval#>, invocation: <#T##NSInvocation#>, repeats: <#T##Bool#>)
         tapCount = 0
-        progress = 0
-        progressBarWidth.constant = 0
         self.view.layer.backgroundColor = UIColor(hue:0.3, saturation: 0.44, brightness: 0.90, alpha: 1.0).cgColor
         startGame()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        borderProgressBar.layer.borderWidth = 2.5
-        borderProgressBar.layer.borderColor = UIColor.black.cgColor
     }
         
     func startGame(){
@@ -71,36 +63,28 @@ class QuestionViewController: UIViewController {
         Time = 0.0
         var colorTime:Float = 0.00
         GameScreenController.TimeIncrement = Float(Int(GameScreenController.TimeIncrement * 1000)) / 1000.0
-        if Instruction == "Tap once!" {
+        if Instruction == "How many blue objects?" {
             Time = 1.5 - GameScreenController.TimeIncrement
             colorTime = 1.50 - GameScreenController.TimeIncrement
         }
-        else if Instruction == "Tap twice!" {
+        else if Instruction == "How many red objects?" {
             Time = 2  - GameScreenController.TimeIncrement
             colorTime = 2.00 - GameScreenController.TimeIncrement
         }
-        else if Instruction == "Tap 3 times!" {
+        else if Instruction == "How many green objects?" {
             Time = 3  - GameScreenController.TimeIncrement
             colorTime = 3.00 - GameScreenController.TimeIncrement
         }
-        else if Instruction == "Swipe up!" {
+        else if Instruction == "How many circles?" {
             Time = 2  - GameScreenController.TimeIncrement
             colorTime = 2.00 - GameScreenController.TimeIncrement
         }
-        else if Instruction == "Swipe down!" {
+        else if Instruction == "How many squares?" {
             Time = 2  - GameScreenController.TimeIncrement
             colorTime = 2.00 - GameScreenController.TimeIncrement
         }
-        else if Instruction == "Swipe right!" {
+        else if Instruction == "How many triangles?" {
             Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
-        }
-        else if Instruction == "Swipe left!" {
-            Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
-        }
-        else if Instruction == "Shake your phone!" {
-            Time = 2 - GameScreenController.TimeIncrement
             colorTime = 2.00 - GameScreenController.TimeIncrement
         }
         GameTimer.text = self.formatter.string(from: NSNumber(value: Time))
@@ -138,28 +122,7 @@ class QuestionViewController: UIViewController {
     }
     
     func success(){
-        timeSolved = timeAlotted - self.Time
-        isComplete = true
         timer.invalidate()
-        if (timeSolved < timeAlotted/2) {
-            progress += 35
-        }
-        else {
-            progress = 0
-        }
-        if (progress >= 280) {
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
-                self.progressBarWidth.constant = 280
-                self.view.layoutIfNeeded()
-                print("progress bar filled!")
-            }, completion: nil)
-        }
-        else {
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
-                self.progressBarWidth.constant = CGFloat(self.progress)
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-        }
         var degree =  CGFloat(Int.random(in: 0...360))
         while(degree <= previousDegree - 20 && degree >= previousDegree + 20){
             degree =  CGFloat(Int.random(in: 0...360))
@@ -211,6 +174,13 @@ class QuestionViewController: UIViewController {
               }
             )
         }, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "youlose"){
+            let loseView = segue.destination as! loseViewController
+            loseView.previousView = "questions"
+        }
     }
 
 }

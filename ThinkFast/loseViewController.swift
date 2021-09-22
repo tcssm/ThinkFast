@@ -7,18 +7,36 @@
 
 import UIKit
 
-class loseViewController: UIViewController {
+extension UINavigationController {
+  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+      popToViewController(vc, animated: animated)
+    }
+  }
+}
 
+class loseViewController: UIViewController {
+    
+    var previousView : String!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func mainMenuButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBAction func retryButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-        GameScreenController.TimeIncrement = 0.0
+        if(previousView == "game"){
+            navigationController?.popViewController(animated: true)
+            GameScreenController.TimeIncrement = 0.0
+        }else if(previousView == "questions"){
+            navigationController?.popToViewController(ofClass: MemoryViewController.self, animated: true)
+            QuestionViewController.TimeIncrement = 0.0
+        }
+        
         self.view.layoutIfNeeded()
     }
     /*

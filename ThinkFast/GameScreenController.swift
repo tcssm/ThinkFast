@@ -46,7 +46,6 @@ class GameScreenController: UIViewController {
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 1
         super.viewWillAppear(true)
-        //progressPulseTimer = Timer.scheduledTimer(timeInterval: <#T##TimeInterval#>, invocation: <#T##NSInvocation#>, repeats: <#T##Bool#>)
         tapCount = 0
         progress = 0
         progressBarWidth.constant = 0
@@ -242,6 +241,13 @@ class GameScreenController: UIViewController {
         }
         else if sender.direction == .down && Instruction == "Swipe down!" {
             success()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "youlose"){
+            let loseView = segue.destination as! loseViewController
+            loseView.previousView = "game"
         }
     }
     
