@@ -18,6 +18,7 @@ class MemoryViewController: UIViewController {
     var Time:Float = 0.0
     var hueValue:CGFloat = 0.0
     var startDelay: Timer!
+    var counts:[Int] = [Int](repeating: 0, count: 6)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -29,17 +30,25 @@ class MemoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "questionScreen"{
+            let questionViewController = segue.destination as! QuestionViewController
+            questionViewController.answerList = counts
+        }
+    }
+    
     func startGame(){
         display()
         Time = 10.0
         var colorTime:Float = 10.00
+        let colorTicks:Float = (colorTime/0.01)
         GameTimer.text = self.formatter.string(from: NSNumber(value: Time))
         startDelay = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.0), repeats: false) { startDelay in
             startDelay.invalidate()
             self.hueValue = 0.3
             self.colorTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.01), repeats: true) { colorTimer in
                 colorTime -= 0.01
-                self.hueValue -= 0.0003
+                self.hueValue -= 0.3 / CGFloat(colorTicks)
                 colorTime = Float(Double(round(10000*self.Time)/10000))
                 let color = UIColor(hue:self.hueValue, saturation: 0.44, brightness: 0.90, alpha: 1.0)
                 self.view.backgroundColor = color
@@ -85,6 +94,7 @@ class MemoryViewController: UIViewController {
         setColors()
         setShapes()
         setVisible()
+        countShapes()
     }
     var 📸 = "a"
 
@@ -99,8 +109,32 @@ class MemoryViewController: UIViewController {
         }
     }
     
+    func countShapes(){
+        counts = [Int](repeating: 0, count: 6)
+        for shape in memoryShapes{
+            if !shape.isHidden && shape.backgroundColor?.cgColor == UIColor.systemBlue.cgColor{ //How many blue objects?
+                counts[0] += 1
+            }else if !shape.isHidden && shape.backgroundColor?.cgColor == UIColor.systemRed.cgColor{ //How many red objects?
+                counts[1] += 1
+            }else if !shape.isHidden && shape.backgroundColor?.cgColor == UIColor.systemGreen.cgColor{ //How many green objects?
+                counts[2] += 1
+            }
+            
+            if !shape.isHidden && shape.layer.cornerRadius == 48{ //How many circles?
+                counts[3] += 1
+            }
+            else if !shape.isHidden && shape.layer.cornerRadius == 0{ //How many squares?
+                counts[4] += 1
+            }else if !shape.isHidden && shape.layer.cornerRadius == 15{ //How many triangles?
+                counts[5] += 1
+            }
+            
+        }
+    }
+    
     func setShapes(){
         for shape in memoryShapes{
+            shape.layer.sublayers?[0].removeFromSuperlayer()
             let randomNum = Int.random(in: 1...3)
             if randomNum  == 1{
                 shape.layer.cornerRadius = 0
@@ -133,11 +167,10 @@ class MemoryViewController: UIViewController {
         let shape = CAShapeLayer()
         shape.path = path
         shape.fillColor = targetView!.backgroundColor?.cgColor
-        targetView!.backgroundColor = self.view.backgroundColor
         targetView!.layer.insertSublayer(shape, at: 0)
     }
     
-
+    
     
 
 }

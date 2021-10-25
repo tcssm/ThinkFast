@@ -28,6 +28,7 @@ class loseViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    
     @IBAction func retryButton(_ sender: Any) {
         if(previousView == "game"){
             navigationController?.popViewController(animated: true)

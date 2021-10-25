@@ -10,15 +10,18 @@ import Lottie
 
 class QuestionViewController: UIViewController {
 
-    let formatter = NumberFormatter()
-    static var TimeIncrement:Float = 0.0
+
+    @IBOutlet var answerButtons: [UIButton]!
     @IBOutlet weak var InstructionalText: UILabel!
     @IBOutlet weak var GameTimer: UILabel!
     @IBOutlet weak var subAnim: UILabel!
     @IBOutlet weak var confetti: AnimationView!
+    @IBOutlet weak var SubTime: UILabel!
+    let formatter = NumberFormatter()
+    static var TimeIncrement:Float = 0.0
     var Instruction: String!
     let InstructionsList: [String]=["How many blue objects?", "How many red objects?", "How many green objects?", "How many circles?", "How many squares?", "How many triangles?"]
-    @IBOutlet weak var SubTime: UILabel!
+    var answerList:[Int]!
     var tapCount = 0
     var isComplete = false
     var lastPoint = CGPoint.zero
@@ -37,16 +40,42 @@ class QuestionViewController: UIViewController {
     var timer: Timer!
     var startDelay: Timer!
     var previousDegree : CGFloat = 0.0
+    var correctAnswerIndex = 0
+    var correctAnswer = 0
+    var questionIndex = -1
+    var possibleAnswers: [Int] = []
                     // Do any additional setup after loading the view.
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: GameScreenController.TimeIncrement)) ?? "0.0") + "s"
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 1
-        super.viewWillAppear(true)
-        //progressPulseTimer = Timer.scheduledTimer(timeInterval: <#T##TimeInterval#>, invocation: <#T##NSInvocation#>, repeats: <#T##Bool#>)
         tapCount = 0
         self.view.layer.backgroundColor = UIColor(hue:0.3, saturation: 0.44, brightness: 0.90, alpha: 1.0).cgColor
+        
         startGame()
+    }
+    
+    func setAnswers(){
+        self.correctAnswerIndex = Int.random(in: 0..<answerButtons.count)
+        correctAnswer = answerList[self.questionIndex]
+        answerButtons[self.correctAnswerIndex].setTitle(String(correctAnswer), for: .normal)
+        if correctAnswer <= 1{
+            possibleAnswers = Array(0...3)
+        }else{
+            possibleAnswers = Array(correctAnswer - 2...correctAnswer + 2)
+        }
+        let correctIndex = possibleAnswers.firstIndex(of: correctAnswer)
+        if let correctIndex = correctIndex {
+            possibleAnswers.remove(at: correctIndex)
+        }
+        for i in 0..<answerButtons.count{
+            if i != correctAnswerIndex{
+                let index = Int.random(in: 0..<possibleAnswers.count)
+                let answer = possibleAnswers.remove(at: index)
+                answerButtons[i].setTitle(String(answer), for: .normal)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -59,33 +88,35 @@ class QuestionViewController: UIViewController {
         formatter.maximumFractionDigits = 1
         tapCount = 0
         Instruction = InstructionsList.randomElement()
+        questionIndex = InstructionsList.firstIndex(of: Instruction)!
         InstructionalText.text = Instruction
+        setAnswers()
         Time = 0.0
         var colorTime:Float = 0.00
         GameScreenController.TimeIncrement = Float(Int(GameScreenController.TimeIncrement * 1000)) / 1000.0
         if Instruction == "How many blue objects?" {
-            Time = 1.5 - GameScreenController.TimeIncrement
-            colorTime = 1.50 - GameScreenController.TimeIncrement
+            Time = 5 - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         else if Instruction == "How many red objects?" {
-            Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
+            Time = 5  - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         else if Instruction == "How many green objects?" {
-            Time = 3  - GameScreenController.TimeIncrement
-            colorTime = 3.00 - GameScreenController.TimeIncrement
+            Time = 5  - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         else if Instruction == "How many circles?" {
-            Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
+            Time = 5  - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         else if Instruction == "How many squares?" {
-            Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
+            Time = 5  - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         else if Instruction == "How many triangles?" {
-            Time = 2  - GameScreenController.TimeIncrement
-            colorTime = 2.00 - GameScreenController.TimeIncrement
+            Time = 5  - GameScreenController.TimeIncrement
+            colorTime = 5.00 - GameScreenController.TimeIncrement
         }
         GameTimer.text = self.formatter.string(from: NSNumber(value: Time))
         startDelay = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.0), repeats: false) { startDelay in
@@ -93,7 +124,7 @@ class QuestionViewController: UIViewController {
             self.hueValue = 0.3
             self.colorTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.01), repeats: true) { colorTimer in
                 colorTime -= 0.01
-                self.hueValue -= 0.001
+                self.hueValue -= 0.0006
                 colorTime = Float(Double(round(10000*self.Time)/10000))
                 self.view.layer.backgroundColor = UIColor(hue:self.hueValue, saturation: 0.44, brightness: 0.90, alpha: 1.0).cgColor
                 if colorTime == 0 {
@@ -131,11 +162,11 @@ class QuestionViewController: UIViewController {
         confetti.transform = CGAffineTransform(rotationAngle: angle)
         confetti.isHidden = false
         confetti.play(completion: {_ in self.confetti.isHidden = true
-            self.startGame()
+            self.navigationController?.popViewController(animated: true)
         })
         subAnimation()
         colorTimer.invalidate()
-        GameScreenController.TimeIncrement += 0.1
+        //GameScreenController.TimeIncrement += 0.1
     }
     
     func subAnimation(){
@@ -182,5 +213,16 @@ class QuestionViewController: UIViewController {
             loseView.previousView = "questions"
         }
     }
+    
+    @IBAction func answerQuestion(_ sender: UIButton) {
+        if Int(sender.currentTitle!) == correctAnswer{
+            success()
+        }else{
+            timer.invalidate()
+            colorTimer.invalidate()
+            self.performSegue(withIdentifier: "youlose", sender: self)
+        }
+    }
+    
 
 }

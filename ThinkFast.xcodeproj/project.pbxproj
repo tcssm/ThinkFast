@@ -15,6 +15,8 @@
 		F7040CA626703E8700032247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA526703E8700032247 /* Assets.xcassets */; };
 		F7040CA926703E8700032247 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7040CA726703E8700032247 /* LaunchScreen.storyboard */; };
 		F7040CB12670449E00032247 /* GameScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7040CB02670449E00032247 /* GameScreenController.swift */; };
+		F704AAEC27068F0F0076D73C /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704AAEB27068F0F0076D73C /* ViewController2.swift */; };
+		F7271FEE270FF637000B2DC6 /* LastOpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7271FED270FF637000B2DC6 /* LastOpeningViewController.swift */; };
 		F730A20526C353F300271D23 /* confetti-firework.json in Resources */ = {isa = PBXBuildFile; fileRef = F730A20426C353F300271D23 /* confetti-firework.json */; };
 		F76F0FF626A10CF500EF2A9F /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = F76F0FF526A10CF500EF2A9F /* confetti.json */; };
 		F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7879D8D2682BBC600E296FD /* loseViewController.swift */; };
@@ -37,6 +39,8 @@
 		F7040CA826703E8700032247 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7040CAA26703E8700032247 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7040CB02670449E00032247 /* GameScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreenController.swift; sourceTree = "<group>"; };
+		F704AAEB27068F0F0076D73C /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		F7271FED270FF637000B2DC6 /* LastOpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOpeningViewController.swift; sourceTree = "<group>"; };
 		F730A20426C353F300271D23 /* confetti-firework.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "confetti-firework.json"; sourceTree = "<group>"; };
 		F76F0FF526A10CF500EF2A9F /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		F7879D8D2682BBC600E296FD /* loseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loseViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				F7040C9E26703E8500032247 /* SceneDelegate.swift */,
 				F7040CA026703E8500032247 /* ViewController.swift */,
 				F7040CA226703E8500032247 /* Main.storyboard */,
+				F704AAEB27068F0F0076D73C /* ViewController2.swift */,
 				F7879D8F2685591F00E296FD /* goodJobScreen.swift */,
 				F7040CB02670449E00032247 /* GameScreenController.swift */,
 				F79317E826DF028200B704D6 /* QuestionViewController.swift */,
@@ -102,6 +107,7 @@
 				F7040CAA26703E8700032247 /* Info.plist */,
 				F79317EA26DF043F00B704D6 /* MemoryViewController.swift */,
 				F79317EC26DF061F00B704D6 /* CircleView.swift */,
+				F7271FED270FF637000B2DC6 /* LastOpeningViewController.swift */,
 			);
 			path = ThinkFast;
 			sourceTree = "<group>";
@@ -215,9 +221,11 @@
 			files = (
 				F79317ED26DF061F00B704D6 /* CircleView.swift in Sources */,
 				F7879D902685591F00E296FD /* goodJobScreen.swift in Sources */,
+				F7271FEE270FF637000B2DC6 /* LastOpeningViewController.swift in Sources */,
 				F7040CA126703E8500032247 /* ViewController.swift in Sources */,
 				F79317E926DF028200B704D6 /* QuestionViewController.swift in Sources */,
 				F7879D8E2682BBC600E296FD /* loseViewController.swift in Sources */,
+				F704AAEC27068F0F0076D73C /* ViewController2.swift in Sources */,
 				F7040C9D26703E8500032247 /* AppDelegate.swift in Sources */,
 				F79317EB26DF043F00B704D6 /* MemoryViewController.swift in Sources */,
 				F7040C9F26703E8500032247 /* SceneDelegate.swift in Sources */,

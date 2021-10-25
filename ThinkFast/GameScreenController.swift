@@ -18,9 +18,9 @@ class GameScreenController: UIViewController {
     @IBOutlet weak var progressBarWidth: NSLayoutConstraint!
     @IBOutlet weak var borderProgressBar: UIView!
     @IBOutlet weak var confetti: AnimationView!
+    @IBOutlet weak var SubTime: UILabel!
     var Instruction: String!
     let InstructionsList: [String]=["Swipe down!", "Swipe up!", "Swipe left!", "Swipe right!", "Tap 3 times!", "Tap once!", "Tap twice!", "Shake your phone!"]
-    @IBOutlet weak var SubTime: UILabel!
     var tapCount = 0
     var isComplete = false
     var progress = 0
@@ -149,7 +149,6 @@ class GameScreenController: UIViewController {
             UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
                 self.progressBarWidth.constant = 280
                 self.view.layoutIfNeeded()
-                print("progress bar filled!")
             }, completion: nil)
         }
         else {
