@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 6/8/21.
+//  Created by  Owen Gregson on 6/8/21.
 //
 
 import UIKit

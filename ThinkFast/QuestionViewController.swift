@@ -2,7 +2,7 @@
 //  QuestionViewController.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 8/31/21.
+//  Created by Owen Gregson on 8/31/21.
 //
 
 import UIKit
@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var GameTimer: UILabel!
     @IBOutlet weak var subAnim: UILabel!
     @IBOutlet weak var confetti: AnimationView!
+    @IBOutlet weak var wrongView: UIView!
     @IBOutlet weak var SubTime: UILabel!
     let formatter = NumberFormatter()
     static var TimeIncrement:Float = 0.0
@@ -36,6 +37,7 @@ class QuestionViewController: UIViewController {
     var timeAlotted:Float = 0.0
     var startX:CGFloat = 365.0
     var progressPulseTimer:Timer!
+    var fadeTimer:Timer!
     var startY:CGFloat = 65
     var timer: Timer!
     var startDelay: Timer!
@@ -47,7 +49,7 @@ class QuestionViewController: UIViewController {
                     // Do any additional setup after loading the view.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: GameScreenController.TimeIncrement)) ?? "0.0") + "s"
+        SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: MemoryViewController.TimeIncrement)) ?? "0.0") + "s"
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 1
         tapCount = 0
@@ -83,7 +85,8 @@ class QuestionViewController: UIViewController {
     }
         
     func startGame(){
-        SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: GameScreenController.TimeIncrement)) ?? "0.0") + "s"
+        wrongView.isHidden = true
+        SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: MemoryViewController.TimeIncrement)) ?? "0.0") + "s"
         formatter.minimumFractionDigits = 1
         formatter.maximumFractionDigits = 1
         tapCount = 0
@@ -93,7 +96,7 @@ class QuestionViewController: UIViewController {
         setAnswers()
         Time = 0.0
         var colorTime:Float = 0.00
-        GameScreenController.TimeIncrement = Float(Int(GameScreenController.TimeIncrement * 1000)) / 1000.0
+        MemoryViewController.TimeIncrement = Float(Int(MemoryViewController.TimeIncrement * 1000)) / 1000.0
         if Instruction == "How many blue objects?" {
             Time = 5 - GameScreenController.TimeIncrement
             colorTime = 5.00 - GameScreenController.TimeIncrement
@@ -164,9 +167,11 @@ class QuestionViewController: UIViewController {
         confetti.play(completion: {_ in self.confetti.isHidden = true
             self.navigationController?.popViewController(animated: true)
         })
+        MemoryViewController.TimeIncrement += 0.1
+        SubTime.text = "- " + (self.formatter.string(from: NSNumber(value: MemoryViewController.TimeIncrement)) ?? "0.0") + "s"
         subAnimation()
         colorTimer.invalidate()
-        //GameScreenController.TimeIncrement += 0.1
+        
     }
     
     func subAnimation(){
@@ -220,9 +225,18 @@ class QuestionViewController: UIViewController {
         }else{
             timer.invalidate()
             colorTimer.invalidate()
-            self.performSegue(withIdentifier: "youlose", sender: self)
+            MemoryViewController.TimeIncrement = 0.0
+            wrongView.alpha = 0.7
+            wrongView.isHidden = false
+            fadeTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.06), repeats: true) { timer in
+                self.wrongView.alpha -= 0.1
+                if self.wrongView.alpha <= 0.0{
+                    self.fadeTimer.invalidate()
+                    self.wrongView.isHidden = true
+                    self.performSegue(withIdentifier: "youlose", sender: self)
+                }
+                
+            }
         }
     }
-    
-
 }

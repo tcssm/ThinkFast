@@ -2,7 +2,7 @@
 //  LastOpeningViewController.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 10/7/21.
+//  Created by  Owen Gregson on 10/7/21.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  MemoryViewController.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 8/31/21.
+//  Created by  Owen Gregson on 8/31/21.
 //
 
 import UIKit
@@ -19,6 +19,7 @@ class MemoryViewController: UIViewController {
     var hueValue:CGFloat = 0.0
     var startDelay: Timer!
     var counts:[Int] = [Int](repeating: 0, count: 6)
+    static var TimeIncrement: Float = 0.0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,8 +40,8 @@ class MemoryViewController: UIViewController {
     
     func startGame(){
         display()
-        Time = 10.0
-        var colorTime:Float = 10.00
+        Time = 10.0 - MemoryViewController.TimeIncrement
+        var colorTime:Float = 10.00 - MemoryViewController.TimeIncrement
         let colorTicks:Float = (colorTime/0.01)
         GameTimer.text = self.formatter.string(from: NSNumber(value: Time))
         startDelay = Timer.scheduledTimer(withTimeInterval: TimeInterval(0.0), repeats: false) { startDelay in
@@ -68,7 +69,8 @@ class MemoryViewController: UIViewController {
                 if(self.Time <= 0){
                     self.Time = 0.0
                 }
-                self.GameTimer.text = self.formatter.string(from: NSNumber(value: self.Time))
+                
+                self.GameTimer.text = "\(Double(Int(self.Time*10)) / 10.0)"
                 if self.Time == 0.0 {
                     self.Time = 0.0
                     timer.invalidate()

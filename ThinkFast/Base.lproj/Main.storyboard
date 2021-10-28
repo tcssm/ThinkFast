@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GMb-sx-CWg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GMb-sx-CWg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -764,12 +764,6 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YM-hh-xmA" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="0.0" y="125" width="414" height="592"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="confetti-firework"/>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AS9-i7-8TF">
                                 <rect key="frame" x="22" y="332" width="370" height="178"/>
                                 <subviews>
@@ -873,6 +867,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YM-hh-xmA" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="125" width="414" height="592"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="confetti-firework"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWx-SL-hzk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CiB-VY-Yfe"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -882,9 +886,13 @@
                             <constraint firstItem="AS9-i7-8TF" firstAttribute="centerX" secondItem="eHy-V9-xvj" secondAttribute="centerX" id="2iR-Dd-RqD"/>
                             <constraint firstItem="aqz-ql-pw7" firstAttribute="centerX" secondItem="eHy-V9-xvj" secondAttribute="centerX" id="8Qt-Se-lK7"/>
                             <constraint firstItem="773-NC-k0t" firstAttribute="centerX" secondItem="eHy-V9-xvj" secondAttribute="centerX" id="ApX-cm-o1h"/>
+                            <constraint firstAttribute="bottom" secondItem="cWx-SL-hzk" secondAttribute="bottom" id="EfB-54-eUB"/>
                             <constraint firstItem="CiB-VY-Yfe" firstAttribute="bottom" secondItem="773-NC-k0t" secondAttribute="bottom" constant="106" id="JMY-VM-HQm"/>
+                            <constraint firstItem="cWx-SL-hzk" firstAttribute="top" secondItem="eHy-V9-xvj" secondAttribute="top" id="Mym-fd-iKh"/>
+                            <constraint firstItem="cWx-SL-hzk" firstAttribute="leading" secondItem="CiB-VY-Yfe" secondAttribute="leading" id="N0K-17-eRy"/>
                             <constraint firstItem="6YM-hh-xmA" firstAttribute="trailing" secondItem="CiB-VY-Yfe" secondAttribute="trailing" id="PeS-Ni-QOJ"/>
                             <constraint firstItem="AS9-i7-8TF" firstAttribute="centerY" secondItem="eHy-V9-xvj" secondAttribute="centerY" id="Qnx-hy-XIO"/>
+                            <constraint firstItem="cWx-SL-hzk" firstAttribute="trailing" secondItem="CiB-VY-Yfe" secondAttribute="trailing" id="YYb-YJ-2Gc"/>
                             <constraint firstItem="CiB-VY-Yfe" firstAttribute="trailing" secondItem="aqz-ql-pw7" secondAttribute="trailing" constant="10" id="c1w-o5-7mh"/>
                             <constraint firstItem="6YM-hh-xmA" firstAttribute="centerY" secondItem="eHy-V9-xvj" secondAttribute="centerY" id="cNB-C6-v2f"/>
                             <constraint firstItem="CiB-VY-Yfe" firstAttribute="bottom" secondItem="6YM-hh-xmA" secondAttribute="bottom" constant="91" id="hsC-B4-Wcj"/>
@@ -902,6 +910,7 @@
                         <outlet property="SubTime" destination="5ZO-GH-vgi" id="bbc-of-rsS"/>
                         <outlet property="confetti" destination="6YM-hh-xmA" id="hcU-Kz-u70"/>
                         <outlet property="subAnim" destination="9ww-Xu-Ess" id="gCR-M5-Pf2"/>
+                        <outlet property="wrongView" destination="cWx-SL-hzk" id="uhA-rz-Jfv"/>
                         <outletCollection property="answerButtons" destination="mFe-9P-mHa" collectionClass="NSMutableArray" id="c85-4s-hSd"/>
                         <outletCollection property="answerButtons" destination="PmE-0J-aBg" collectionClass="NSMutableArray" id="mQv-Mu-XYF"/>
                         <outletCollection property="answerButtons" destination="FxC-EB-pAs" collectionClass="NSMutableArray" id="aXg-uj-LAl"/>

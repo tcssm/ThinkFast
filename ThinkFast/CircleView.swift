@@ -2,7 +2,7 @@
 //  CircleView.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 8/31/21.
+//  Created by  Owen Gregson on 8/31/21.
 //
 
 import UIKit

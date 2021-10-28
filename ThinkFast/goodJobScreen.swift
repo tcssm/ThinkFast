@@ -2,7 +2,7 @@
 //  goodJobScreen.swift
 //  ThinkFast
 //
-//  Created by Deanna Yee on 6/24/21.
+//  Created by  Owen Gregson on 6/24/21.
 //
 
 import UIKit
